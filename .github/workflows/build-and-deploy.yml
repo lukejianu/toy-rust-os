@@ -29,7 +29,7 @@ jobs:
           version: '8.4'
       
       - name: Build and Publish Scribble Source Files
-        run: mkdir build && scribble --dest build --htmls home.scrbl
+        run: cd docs && mkdir build && scribble --dest build --htmls home.scrbl
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.0
