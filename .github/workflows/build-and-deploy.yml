@@ -8,26 +8,26 @@ on:
     paths:
       - docs/**
 
-    jobs:
-      build-and-deploy:
-        concurrency: ci-${{ github.ref }}
-        runs-on: ubuntu-latest
-        steps:
-          - uses: actions/checkout@v3
-          
-          - name: Install Racket
-            uses: Bogdanp/setup-racket@v1.7
-            with:
-              architecture: 'x64'
-              distribution: 'full'
-              variant: 'CS'
-              version: '8.4'
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install Racket
+        uses: Bogdanp/setup-racket@v1.7
+        with:
+          architecture: 'x64'
+          distribution: 'full'
+          variant: 'CS'
+          version: '8.4'
 
-          - name: Generate HTML from Scribble Source Files
-            run: cd docs && ./xdocs
+      - name: Generate HTML from Scribble Source Files
+        run: cd docs && ./xdocs
 
-          - name: Deploy
-            uses: JamesIves/github-pages-deploy-action@v4.3.0
-            with:
-              branch: gh-pages # The branch the action should deploy to.
-              folder: docs/build # The folder the action should deploy.
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs/build # The folder the action should deploy.
