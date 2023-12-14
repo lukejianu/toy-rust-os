@@ -1,13 +1,12 @@
 # Small Rust OS
+This repository is an in-progress attempt of systematically designing and implementing
+a small operating system using the Rust programming language.
 
-### The Idea
-- This repository is an in-progress attempt of systematically designing and implementing a small operating system using the Rust programming language.
-- We will be loosely following Philipp Oppermann's blog post [_Writing an OS in Rust_](https://os.phil-opp.com/).
+## Quick Start
+You can run the OS by ... (installing XYZ, and running XYZ).
 
-### Organization
-The following table describes the purpose of each directory in this repository.
-For detailed explanations of the files, follow the links. 
+We've extensively documented this project, including the motivations, necessary
+background information, component and project specifications, and much more.
+You can read all of this documentation at
 
-| directory | purpose |
-|--------------------- | ------- |
-
+[https://www.lukejianu.com/small-rust-os/](https://www.lukejianu.com/small-rust-os/)
