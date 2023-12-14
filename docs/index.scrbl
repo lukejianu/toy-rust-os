@@ -2,8 +2,9 @@
  
 @title{Small Rust OS Documentation}
 
-@author["Luke Jianu"]
-@author["Andrey Piterkin"]
+@author["Luke Jianu"
+        "Andrey Piterkin"
+        @author+email["Lucas Sta Maria" "lucas@priime.dev"]]
 
 This site contains documentation for the
 @hyperlink["https://github.com/lukejianu/small-rust-os"]{small-rust-os}
