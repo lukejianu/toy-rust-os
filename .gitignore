@@ -1,2 +1,5 @@
 # Ignore build output.
 target
+
+# Ignore Vim swap files.
+*.swp
