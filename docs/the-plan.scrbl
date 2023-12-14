@@ -2,4 +2,7 @@
  
 @title{The Plan}
 
-This page will explain our plan.
+This page will explain the scope of our OS (basically, how much
+of POSIX are we implementing), and the road-map of component
+implementations.
+

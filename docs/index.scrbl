@@ -18,6 +18,6 @@ on the scope of the project.
 @; ------------------------------------------------------------------------
 
 @include-section["motivation.scrbl"]
-@include-section["the-idea.scrbl"]
+@include-section["a-toy-os.scrbl"]
 @include-section["the-plan.scrbl"]
 
