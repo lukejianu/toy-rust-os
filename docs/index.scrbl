@@ -13,11 +13,20 @@ implement a small operating system in the Rust programming language.
 We are currently in the very early stages, still deciding
 on the scope of the project.
 
+This document is itself written using
+@hyperlink["https://docs.racket-lang.org/scribble/index.html"]{Scribble}, a
+Racket DSL for writing documentation.
+You can see its source at
+@hyperlink["https://github.com/lukejianu/small-rust-os/tree/main/docs"]{https://github.com/lukejianu/small-rust-os/tree/main/docs},
+starting with the @filepath{index.scrbl} file.
+
 @table-of-contents[]
 
 @; ------------------------------------------------------------------------
 
 @include-section["motivation.scrbl"]
 @include-section["a-toy-os.scrbl"]
+@include-section["the-components.scrbl"]
 @include-section["the-plan.scrbl"]
+@include-section["contributor-resources.scrbl"]
 

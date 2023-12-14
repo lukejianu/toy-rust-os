@@ -14,11 +14,11 @@ We first became interested in operating systems after exploring
 which is an OS used as a teaching tool in systems courses.
 
 @subsection{Why Rust?}
-TBD
+We chose Rust because...
 
 @subsection{Why Systematic Design?}
 
 Systematic design is ...
-We chose this because ...
-something something SWDEV
+
+We're interested in designing systematically because ...
 
