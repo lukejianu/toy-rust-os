@@ -3,7 +3,7 @@
 @title{Small Rust OS Documentation}
 
 @author[@author+email["Luke Jianu" "jianuluke@gmail.com"]
-        "Andrey Piterkin"
+        @author+email["Andrey Piterkin" "andrey.piterkin@gmail.com"]
         @author+email["Lucas Sta Maria" "lucas@priime.dev"]]
 
 This site contains documentation for the
