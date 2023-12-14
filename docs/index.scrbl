@@ -2,7 +2,7 @@
  
 @title{Small Rust OS Documentation}
 
-@author["Luke Jianu"
+@author[@author+email["Luke Jianu" "jianuluke@gmail.com"]
         "Andrey Piterkin"
         @author+email["Lucas Sta Maria" "lucas@priime.dev"]]
 
