@@ -4,7 +4,8 @@
 
 @author[@author+email["Luke Jianu" "jianuluke@gmail.com"]
         @author+email["Andrey Piterkin" "andrey.piterkin@gmail.com"]
-        @author+email["Lucas Sta Maria" "lucas@priime.dev"]]
+        @author+email["Lucas Sta Maria" "lucas@priime.dev"]
+        @author+email["Oleg Pavlenko" "oleg.pavlenko@outlook.com"]]
 
 This site contains documentation for the
 @hyperlink["https://github.com/lukejianu/small-rust-os"]{small-rust-os}
