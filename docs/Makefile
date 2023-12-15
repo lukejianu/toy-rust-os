@@ -4,7 +4,7 @@ all:
 	scribble --dest build --htmls index.scrbl \
 	&& mv build/index/* build && rm -rf build/index # Flatten.
 
-.PHONY: clean
+.PHONY: open
 open:
 	open build/index.html
 
