@@ -37,9 +37,10 @@ describes the philosophy behind how we approach our project:
 that relies on systematic thought, planning, and understanding from the very
 beginning, at every stage, and for every step.}
 
-In our introductory computer science course, we learned the @italic{design
-recipe}, a way of systematically designing small functions. The essence of it
-distills to the idea that @italic{functions follow their data}.
+In our introductory computer science course, we learned the @deftech{design
+recipe}: systematic design that started with small functions. In that course,
+the essence of it boiled down to the idea that @italic{functions follow their
+data}.
 
 @subsubsection{}
 
