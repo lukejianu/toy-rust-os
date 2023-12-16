@@ -52,7 +52,7 @@ recipe}: systematic design that started with small functions. In that course,
 the essence of it boiled down to the idea that @italic{functions follow their
 data}.
 
-@subsubsection{}
+@subsubsection{The Design Recipe}
 
 Let's give an example by implementing @racket[_length], which takes the length
 of a list.
@@ -123,6 +123,46 @@ template and renaming the function, we get this so far:
 @margin-note{TODO: Tie the function design recipe to the program design recipe.}
 
 We're off to a great start!
+
+@subsubsection{The Design Recipe in Rust}
+
+@(define (rust-codeblock . cb)
+  (nested #:style 'code-inset
+    (apply verbatim cb)))
+
+@rust-codeblock{
+use List::*;
+
+#[macro_export]
+macro_rules! list {
+    ( $( $x:expr ),* ) => {
+        {
+            let mut temp_l = Empty;
+            $(
+                temp_l = Cons($x, Box::new(temp_l));
+            )*
+            temp_l
+        }
+    };
+}
+
+enum List {
+    Empty,
+    Cons(i32, Box<List>),
+}
+
+// Computes the length of the given list.
+fn length(l: &List) -> u32 {
+    match l {
+        Empty => 0,
+        Cons(_, rest) => 1 + length(&(*rest)),
+    }
+}
+
+fn main() {
+    println!("{}", length(&list!(1, 2, 3)));
+}
+}
 
 @subsubsection{Systematic Design in our OS}
 
