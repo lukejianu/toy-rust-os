@@ -17,20 +17,19 @@ which is an OS used as a teaching tool in systems courses.
 
 @margin-note["This quote comes from Matthias's talk " @hyperlink["https://felleisen.org/matthias/Presentations/16-west.html"]{Types are like the Weather, Type Systems are like Weathermen} ". He admits he wasn't the first to say this, but we can't find the original quote."]
 
-"And that is a problem, because code is written for others to understand the developers
+"And that is a problem, because code is written for others to understand the developer's
 thoughts, and it accidentally runs on computers." — @hyperlink["https://felleisen.org/matthias/"]{Matthias Felleisen}
 
 We needed a systems programming language, in which we could express our ideas clearly.
 C is too close to assembly. C++ suffers because of its history with C. We wanted
 features commonly associated with functional programming languages—expressive types,
-pattern matching, default immutability, and macros (C macros don't count).
-We aren't particularly concerned with performance, but
-the fact that Rust mostly provides these features as @italic{zero cost abstractions} is
-satisfying.
+pattern matching, default immutability, and macros (C-style macros don't count).
+We aren't particularly concerned with performance, but the fact that Rust mostly
+provides these features as @italic{zero cost abstractions} is satisfying.
 
 @margin-note{As a side note, the Rust compiler error messages are excellent.}
 
-The emphasis on safety, the abscence of undefined behavior, is also appreciated. We are
+The emphasis on safety (the absence of undefined behavior) is also appreciated. We are
 happy to wrestle with @code{rustc}, if it means less issues at runtime.
 
 @subsection{Why Systematic Design?}
