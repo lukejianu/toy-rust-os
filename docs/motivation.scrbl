@@ -16,6 +16,17 @@ which is an OS used as a teaching tool in systems courses.
 @subsection{Why Rust?}
 We chose Rust because...
 
+@itemlist[@item{Zero-cost abstractions— Operating systems are complex and demand performance.
+                Zero-cost abstractions allow developers to write high-lvel, readable,
+                and maintainable code without compromising on performance. Being able to write 
+                abstract code allows developers to code without the introduction of unnecessary
+                overhead and errors that can arise from low level programming.}
+          @item{Memory safety—...}
+          @item{Borrow checker—...}
+          @item{Immutable by default—...}
+          @item{Type safety—...}]
+
+
 @subsection{Why Systematic Design?}
 
 The preface of
