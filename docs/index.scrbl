@@ -1,5 +1,9 @@
 #lang scribble/manual
  
+@(require racket/date)
+
+@(define last-built (date->string (current-date) #true))
+
 @title{Small Rust OS Documentation}
 
 @author[@author+email["Luke Jianu" "jianuluke@gmail.com"]
@@ -33,3 +37,6 @@ starting with the @filepath{index.scrbl} file.
 @include-section["the-plan.scrbl"]
 @include-section["contributor-resources.scrbl"]
 
+
+@linebreak{}
+@smaller["Last built and deployed at " @last-built].
