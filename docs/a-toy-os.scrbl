@@ -1,5 +1,7 @@
 #lang scribble/manual
- 
+
+@(require "utils.rkt") 
+
 @title{A Toy Operating System}
 
 
@@ -24,7 +26,7 @@ An OS is an interface. The functions in the OS's interface are known as
 library function, and the function itself invokes the system call. Read more from the "
 @hyperlink["https://www.gnu.org/software/libc/manual/html_node/System-Calls.html"]{GNU manual}"."]
 
-@codeblock{
+@plain-codeblock{
 // Read the count bytes from the specified file into the given buffer.
 // Returns the number of bytes read.
 ssize_t read(int fd, void *buf, size_t count);

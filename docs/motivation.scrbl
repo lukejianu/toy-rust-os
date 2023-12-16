@@ -1,5 +1,7 @@
 #lang scribble/manual
- 
+
+@(require "utils.rkt")
+
 @title{Motivation}
 
 First and foremost, the idea came from Philipp Oppermann's
@@ -126,11 +128,7 @@ We're off to a great start!
 
 @subsubsection{The Design Recipe in Rust}
 
-@(define (rust-codeblock . cb)
-  (nested #:style 'code-inset
-    (apply verbatim cb)))
-
-@rust-codeblock{
+@plain-codeblock{
 use List::*;
 
 #[macro_export]
