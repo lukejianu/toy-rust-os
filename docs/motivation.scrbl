@@ -15,7 +15,7 @@ which is an OS used as a teaching tool in systems courses.
 
 @subsection{Why Rust?}
 
-"And that is a problem, because code is written for others to understand the
+"Code is written for others to understand the
 developer's thoughts, and it accidentally runs on computers." —
 @hyperlink["https://felleisen.org/matthias/"]{Matthias Felleisen}
 
@@ -32,10 +32,10 @@ We wanted features commonly associated with functional programming
 languages—expressive types, pattern matching, default immutability, and macros
 (C-style macros don't count). We aren't particularly concerned with performance,
 but the fact that Rust mostly provides these features as @italic{zero cost
-abstractions} is satisfying. Rust's compiler also emits excellent error
-messages, and its design offers arguably better memory-safety, which would be
-helpful during the development of an OS. We are happy to wrestle with
-@code{rustc}, if it means less issues at runtime.
+abstractions} is satisfying. Rust's emphasis on safety (absence of undefined
+behavior) is also appreciated. We are happy to wrestle with @code{rustc}, if it
+means less issues at runtime. As a side-note, Rust's compiler emits excellent error
+messages, which makes the language even more enjoyable to work with.
 
 @subsection{Why Systematic Design?}
 
@@ -119,11 +119,18 @@ template and renaming the function, we get this so far:
         [(cons? lst)  ... (first lst) ... (rest lst) ...]))
 }|
 
+@margin-note{TODO: Finish the design recipe here.}
+@margin-note{TODO: Tie the function design recipe to the program design recipe.}
+
 We're off to a great start!
 
 @subsubsection{Systematic Design in our OS}
+
+@margin-note{TODO: Elaborate more on exactly how we're applying systematic design to
+our OS.}
 
 An operating system is considerably larger than a function, consisting of
 numerous complex components. As a group, we want to use this as an opportunity
 to systematically design and implement a reasonably challenging project, testing
 the accumulation of ideas we learned in Northeastern's CS curriculum.
+
