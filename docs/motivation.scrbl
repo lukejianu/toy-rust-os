@@ -34,10 +34,8 @@ languages—expressive types, pattern matching, default immutability, and macros
 but the fact that Rust mostly provides these features as @italic{zero cost
 abstractions} is satisfying. Rust's compiler also emits excellent error
 messages, and its design offers arguably better memory-safety, which would be
-helpful during the development of an OS.
-
-The emphasis on safety (the absence of undefined behavior) is also appreciated.
-We are happy to wrestle with @code{rustc}, if it means less issues at runtime.
+helpful during the development of an OS. We are happy to wrestle with
+@code{rustc}, if it means less issues at runtime.
 
 @subsection{Why Systematic Design?}
 
