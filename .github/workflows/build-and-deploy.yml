@@ -15,9 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: szenius/set-timezone@v1.2
-          with:
-            timezoneLinux: "PST8PDT"
+        with:
+          timezoneLinux: "PST8PDT"
 
       - name: Install Racket
         uses: Bogdanp/setup-racket@v1.7
