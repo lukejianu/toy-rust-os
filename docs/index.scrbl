@@ -39,4 +39,4 @@ starting with the @filepath{index.scrbl} file.
 
 
 @linebreak{}
-@smaller["Last built and deployed at " @last-built].
+@smaller["Last built and deployed at " @last-built " PST".]
