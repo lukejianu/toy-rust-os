@@ -28,6 +28,9 @@ jobs:
           variant: 'CS'
           version: '8.4'
 
+      - name: Install Minted
+        run: raco pkg install --no-docs scribble-minted
+
       - name: Generate HTML from Scribble Source Files
         run: cd docs && make
 

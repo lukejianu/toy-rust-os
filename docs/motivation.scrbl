@@ -1,6 +1,11 @@
 #lang scribble/manual
 
+@(require scribble/minted)
+
 @(require "utils.rkt")
+
+@; Specify new default style
+@(current-pygmentize-default-style 'colorful)
 
 @title{Motivation}
 
@@ -128,7 +133,8 @@ We're off to a great start!
 
 @subsubsection{The Design Recipe in Rust}
 
-@plain-codeblock{
+@; Or specify style as an option (not actually locally scoped, though)
+@minted["rust" #:options '((linenos . true) (style . colorful))]{
 use List::*;
 
 #[macro_export]
