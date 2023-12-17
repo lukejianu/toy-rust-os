@@ -1,6 +1,9 @@
+.PHONY: install
+install:
+	raco pkg install scribble-minted
 
-.PHONY: all
-all:
+.PHONY: docs
+docs:
 	scribble --dest build --htmls index.scrbl \
 	&& mv build/index/* build && rm -rf build/index # Flatten.
 

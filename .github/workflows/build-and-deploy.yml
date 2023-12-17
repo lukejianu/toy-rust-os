@@ -29,10 +29,10 @@ jobs:
           version: '8.4'
 
       - name: Install Minted
-        run: echo "Y" | raco pkg install --no-docs scribble-minted
+        run: echo "Y" | make install
 
       - name: Generate HTML from Scribble Source Files
-        run: cd docs && make
+        run: cd docs && make docs
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.0
