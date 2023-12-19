@@ -24,6 +24,8 @@ Talk about the binaries vs. JVM model.
 
 @italic{Bare metal} means...
 
+@italic{Runtime system} means...
+
 @section{Hello World Bootable Disk Image}
 
 We have a freestanding binary. Now what? We want to be able to put the binary on a USB,
