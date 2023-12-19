@@ -101,32 +101,47 @@ We are attempting to build a large scale system ... without writing any unit tes
 The third line shows @code{strace} logging the system call, and the fourth line
 shows the output from @code{cat}.
 
-@subsection{OS Services}
-Let's take a deeper dive into POSIX and organize the C functions into categories.
+@subsection{OS Functionality}
+The POSIX C API provides a relatively clear idea of the functionality most operating
+systems should provide. Namely, we think there are 3 major pieces of functionality:
+process, memory, and file management.
 
-@margin-note{TODO: This section really sucks.}
+@margin-note{TODO: This section sucks less?}
 
-@subsubsection{Processes}
+@subsubsection{Process Management}
 Users want to run programs. An instance of a running program is called a @italic{process}.
 Thus, an OS must support process creation—loading a program from the file system
-into memory and executing instructions. Users also want to run multiple processes
-concurrently, even on single core machines. This is accomplished by virtualizing the
-CPU. If the CPU can switch between running many processes quickly, it provides the
-illusion that they all execute at once. Since many processes run on single CPU,
-a scheduler becomes necessary. A scheduler needs a mechanism to only run a process
-for a small period time and cancel it, before switching to another process. We rely
-on the hardware to implement this mechanism, in the form of timer interupts.
+into memory and initiating instruction execution.
+
+Users also want to run multiple programs at the same time, even on single core machines.
+This is accomplished by @italic{virtualizing} the CPU.
+If the CPU switches between running many processes quickly, it provides the
+illusion that they all execute at once.
+
+Since many processes can run at once on a single CPU, the OS must decide who gets
+the CPU and for how long. This is the job of the @italic{scheduler}.
 
 @subsubsection{Memory Management}
-Programs need memory to run. Programs can also request for more memory at runtime. 
-Paging is a common memory management technique.
+Memory stores information for @bold{immediate} use by the CPU. The OS must provide
+processes with a way to request and return memory. Thus, the OS must track
+which blocks of memory are taken and which blocks are free.
 
-@subsubsection{File Operations}
+@subsubsection{File Management}
 Users want to create files, write to files, read from files, etc. Typically,
 these operations are implemented in the component known as the @italic{file system}.
 
-Unix-like operating systems also define the notion of a @italic{file descriptor}.
+@margin-note{TODO: Are file descriptors part of the file system?}
 
-To quote the xv6 paper: "the file descriptor interface abstracts away the differences
-between files, pipes, and devices, making them all look like streams of bytes".
+Unix-like operating systems also define the notion of a @italic{file descriptor}.
+To quote the xv6 paper, "a file descriptor is a small integer representing a
+kernel-managed object that a process may read from or write to".
+
+Examples of the aforementioned kernel-managed objects include files but also
+@italic{pipes}, which are communication channels and a primary mechanism used for
+@italic{inter-process communication}.
+
+The file descriptor interface provides a powerful abstraction similar to
+the @code{Readable} and @code{Appendable} interfaces in the Java programming language.
+The core idea being that all file descriptors are pointers to @italic{streams of bytes}
+that can either be read from or written (appended) to.
 
