@@ -11,7 +11,8 @@
         @author+email["Lucas Sta Maria" "lucas@priime.dev"]
         @author+email["Oleg Pavlenko" "oleg.pavlenko@outlook.com"]
         @author+email["James Sweeney" "sweeneyj202@gmail.com"]
-        @author+email["Nishil Patel" "nishil.patel13@gmail.com"]]
+        @author+email["Nishil Patel" "nishil.patel13@gmail.com"]
+        @author+email["Derek Kaplan" "thederekkaplan@proton.me"]]
 
 This site contains documentation for the
 @hyperlink["https://github.com/lukejianu/small-rust-os"]{small-rust-os}
