@@ -3,7 +3,15 @@ This repository is an in-progress attempt of systematically designing and implem
 a small operating system using the Rust programming language.
 
 ## Quick Start
-You can run the OS by running:
+First, make sure you have [Rust](https://www.rust-lang.org/tools/install) and [QEMU](https://www.qemu.org/download/) installed. Then, set up the build tools:
+
+```
+rustup override set nightly
+rustup component add llvm-tools-preview
+cargo install bootloader
+``` 
+
+You can now run the OS by running:
 
 ```
 cargo run
