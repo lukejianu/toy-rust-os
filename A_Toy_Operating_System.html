@@ -14,7 +14,7 @@ a <span style="font-style: italic">system call number</span>. The <span class="R
 <span class="RktVal">1</span><span class="RktMeta"></span>. Since <span class="RktSym">write</span><span class="RktMeta"></span> is invoked, the <span class="RktSym">syscall</span><span class="RktMeta"></span> instruction expects
 the file descriptor to write to, a pointer to the buffer to read from, and
 the number of bytes to write, which are stored in <span class="RktSym">%rdi</span><span class="RktMeta"></span>, <span class="RktSym">%rsi</span><span class="RktMeta"></span>, and
-<span class="RktSym">%rdx</span><span class="RktMeta"></span>, respectively.</p><h5>2.1.1.2<tt>&nbsp;</tt><a name="(part._.P.O.S.I.X)"></a>POSIX</h5><p>The code snippet above is <span style="font-weight: bold">tighly coupled</span> with Linux. It relies on
+<span class="RktSym">%rdx</span><span class="RktMeta"></span>, respectively.</p><h5>2.1.1.2<tt>&nbsp;</tt><a name="(part._.P.O.S.I.X)"></a>POSIX</h5><p>The code snippet above is <span style="font-weight: bold">tightly coupled</span> with Linux. It relies on
 implementation details of the Linux kernel. Namely, the fact that the <span class="RktSym">write</span><span class="RktMeta"></span>
 system call exists. The snippet above would certainly fail with a microkernel
 implementation, since file system operations are typically not system calls and
