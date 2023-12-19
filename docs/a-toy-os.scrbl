@@ -1,6 +1,6 @@
 #lang scribble/manual
 
-@(require "utils.rkt") 
+@(require "utils.rkt")
 
 @title{A Toy Operating System}
 
@@ -56,7 +56,7 @@ the number of bytes to write, which are stored in @code{%rdi}, @code{%rsi}, and
 
 @subsubsection{POSIX}
 
-The code snippet above is @bold{tighly coupled} with Linux. It relies on
+The code snippet above is @bold{tightly coupled} with Linux. It relies on
 implementation details of the Linux kernel. Namely, the fact that the @code{write}
 system call exists. The snippet above would certainly fail with a microkernel
 implementation, since file system operations are typically not system calls and
