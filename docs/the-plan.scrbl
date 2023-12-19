@@ -19,14 +19,12 @@ The components are to be implemented in the following order...
 @section{Milestones}
 Each milestone is expected to take roughly a week.
 
-@subsection{Milestone 1}
+@table-of-contents[]
 
-@itemlist[@item{Finish design and specification.}
-          @item{Create a "Hello world" bootable disk image.}
-          @item{Setup tests.}]
+@; ------------------------------------------------------------------------
 
+@include-section["milestones/milestone-1.scrbl"]
+@include-section["milestones/milestone-2.scrbl"]
+@include-section["milestones/milestone-3.scrbl"]
 
-@subsection{Milestone 2}
-
-@subsection{Milestone 3}
 
