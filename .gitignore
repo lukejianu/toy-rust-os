@@ -3,3 +3,9 @@ target
 
 # Ignore Vim swap files.
 *.swp
+
+# Ignore Mac garbage.
+.DS_Store
+
+# Ignore Idea files.
+.idea
