@@ -4,8 +4,6 @@
 
 @title{A Toy Operating System}
 
-
-
 @section{What is an OS?}
 @margin-note[@image[#:scale 0.3 "img/OS_Layers.svg.png"]]
 
@@ -20,27 +18,71 @@ physical device when reading from a file, for example.
 @subsection{OS as an API}
 
 An OS is an interface. The functions in the OS's interface are known as
-@italic{system calls}. One common system call is @code{read}.
+@italic{system calls}. At the lowest level, system calls are invoked
+by executing special instructions. At a higher level, operating systems ship with a C
+implementation, which provide a more user-friendly API for system calls.
 
-@margin-note[@code{read} " is technically not the system call. It's actually just a C
-library function, and the function itself invokes the system call. Read more from the "
-@hyperlink["https://www.gnu.org/software/libc/manual/html_node/System-Calls.html"]{GNU manual}"."]
+@subsubsection{System Calls}
 
-@plain-codeblock{
-// Read the count bytes from the specified file into the given buffer.
-// Returns the number of bytes read.
-ssize_t read(int fd, void *buf, size_t count);
+Below is an example of an x86-64 program that prints @code{Hello, world!} on
+the standard output stream. The program invokes the @code{write} Linux system call.
+
+@codeblock[#:line-numbers 0]{
+.global main
+
+.text
+main:
+        mov $1, %rax
+        mov $1, %rdi
+        lea message(%rip), %rsi
+        mov $14, %rdx
+        syscall
+
+.data
+message:
+        .asciz "Hello, world!\n"
 }
 
-The snippet above shows the system call @code{read}.
-This raises the question, what makes this C function declaration a system call, and
-why is @code{int add(int x, int y);} not a system call?
+On line 8, the @code{syscall} instruction is executed. The CPU then switches
+to kernel mode and begins executing a kernel function.
 
-The answer is: the @hyperlink["https://en.wikipedia.org/wiki/POSIX"]{POSIX}
-specification. POSIX specifies the names and signatures of system calls. Different
-operating systems can implement the same interface, so that user programs can run
-"the same" on all POSIX-compliant operating systems.
+Lines 4-7 set up the system call, specifying which system call should be executed and
+passing the arguments. The @code{syscall} instruction expects the @code{%rax} to contain
+a @italic{system call number}. The @code{write} system call has the system call number
+@code{1}. Since @code{write} is invoked, the @code{syscall} instruction expects
+the file descriptor to write to, a pointer to the buffer to read from, and
+the number of bytes to write, which are stored in @code{%rdi}, @code{%rsi}, and
+@code{%rdx}, respectively.
 
+@subsubsection{POSIX}
+
+The code snippet above is @bold{tighly coupled} with Linux. It relies on
+implementation details of the Linux kernel. Namely, the fact that the @code{write}
+system call exists. The snippet above would certainly fail with a microkernel
+implementation, since file system operations are typically not system calls and
+instead are satisfied by @italic{servers} running in user space.
+
+In order to achieve program compatibility on different operating systems, most
+operating systems implement a C API as defined by the
+@hyperlink["https://en.wikipedia.org/wiki/POSIX"]{POSIX} specification.
+
+There is an important distinction here—POSIX does not require operating systems
+to implement certain system calls. As mentioned earlier, that would mean
+microkernel implementations could never be POSIX-compliant. Instead, POSIX
+defines the C API, which represent high-level pieces of functionality that all
+operating systems should support.
+
+Here is the @code{write} C function as defined by POSIX.
+
+@plain-codeblock{ssize_t write(int fd, const void *buf, size_t count);}
+
+The GNU C Library (glibc) is an implementation of the POSIX C API for Linux-based systems.
+The glibc implementation of the @code{write} function will be a simple wrapper over the
+corresponding @code{write} system call. However, an OS with a microkernel will
+implement the @code{write} C function with a function call to a userspace file system
+server.
+
+@subsubsection{System Calls Are Everywhere!}
 Below, the @code{cat} program is called with the file
 @filepath{the-real-motivation.txt}. We use the common Linux utility @code{strace} to
 trace the system calls that @code{cat} invokes. As expected, @code{cat} invokes
@@ -59,13 +101,14 @@ We are attempting to build a large scale system ... without writing any unit tes
 The third line shows @code{strace} logging the system call, and the fourth line
 shows the output from @code{cat}.
 
-@subsection{Abstraction}
-The OS abstracts away the hardware details from user programs...
+@subsection{OS Services}
+Let's take a deeper dive into POSIX and organize the C functions into categories.
 
-A related topic is OS virtualization, the illusion that user processes have the
-CPU and system memory all to themselves... 
+@subsubsection{Computation}
+A process is ...
 
-@section{What does it mean to write an OS?}
+@subsubsection{Memory}
+Memory is ...
 
-Just implement POSIX!
-
+@subsubsection{File System}
+A file system is ...
