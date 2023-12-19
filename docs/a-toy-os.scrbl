@@ -104,11 +104,29 @@ shows the output from @code{cat}.
 @subsection{OS Services}
 Let's take a deeper dive into POSIX and organize the C functions into categories.
 
-@subsubsection{Computation}
-A process is ...
+@margin-note{TODO: This section really sucks.}
 
-@subsubsection{Memory}
-Memory is ...
+@subsubsection{Processes}
+Users want to run programs. An instance of a running program is called a @italic{process}.
+Thus, an OS must support process creation—loading a program from the file system
+into memory and executing instructions. Users also want to run multiple processes
+concurrently, even on single core machines. This is accomplished by virtualizing the
+CPU. If the CPU can switch between running many processes quickly, it provides the
+illusion that they all execute at once. Since many processes run on single CPU,
+a scheduler becomes necessary. A scheduler needs a mechanism to only run a process
+for a small period time and cancel it, before switching to another process. We rely
+on the hardware to implement this mechanism, in the form of timer interupts.
 
-@subsubsection{File System}
-A file system is ...
+@subsubsection{Memory Management}
+Programs need memory to run. Programs can also request for more memory at runtime. 
+Paging is a common memory management technique.
+
+@subsubsection{File Operations}
+Users want to create files, write to files, read from files, etc. Typically,
+these operations are implemented in the component known as the @italic{file system}.
+
+Unix-like operating systems also define the notion of a @italic{file descriptor}.
+
+To quote the xv6 paper: "the file descriptor interface abstracts away the differences
+between files, pipes, and devices, making them all look like streams of bytes".
+
