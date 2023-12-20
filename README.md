@@ -23,7 +23,3 @@ You can read all of this documentation at
 
 [https://www.lukejianu.com/small-rust-os/](https://www.lukejianu.com/small-rust-os/)
 
-## Dependencies
-
-- [qemu](https://www.qemu.org/)
-
