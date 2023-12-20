@@ -81,7 +81,7 @@ of the binary.
 }|
 
 Notice that @code{main} is not the only function! We also see the @code{_start}
-function, that calls the @code{__lib_c_start_main} function, with a pointer to
+function, that calls the @code{__lib_c_start_main} function, with the address of
 @code{main} as its first argument (@code{%rdi}).
 
 The @code{_start} function represents the @italic{C runtime}. Typically, a runtime
@@ -140,6 +140,6 @@ What is the @code{bootimage} thingy?
 
 @subsection{Unit Tests}
 
-@code{qemu}
+We write unit tests by...
 
 
