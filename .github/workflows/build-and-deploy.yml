@@ -26,7 +26,7 @@ jobs:
           architecture: 'x64'
           distribution: 'full'
           variant: 'CS'
-          version: '8.4'
+          version: '8.10'
 
       - name: Install Documentation Dependencies
         working-directory: ./docs/
