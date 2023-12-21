@@ -2,26 +2,20 @@
  
 @title{The Components}
 
-@bold{Software Components}
+This page describes the essential components of the small operating system that
+we aim to implement. In particular, it details the responsibility and
+functionality of the components, their overall design, and interesting
+implementation details.
 
-@margin-note{TODO: Can someone figure out how to indent the component explanations?}
+@section{Scheduler}
 
-a @italic{scheduler}...
+The responsibility of the scheduler is to adequately allocate @italic{tasks} of
+a process to the @italic{resources} of the system.
 
-        The XYZ must... 
+@section{Memory Allocator}
 
-a @italic{memory allocator}...
+@section{File System}
 
-    The XYZ must...
+@section{Shell}
 
-a @italic{file system}...
-
-    The XYZ must...
-
-a @italic{shell}...
-
-    The XYZ must...
-
-a @italic{booter}...
-
-    The XYZ must...
+@section{Booter}
