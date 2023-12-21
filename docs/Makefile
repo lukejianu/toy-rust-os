@@ -1,6 +1,6 @@
 .PHONY: install
 install:
-	raco pkg install scribble-minted
+	raco pkg install --auto --skip-installed scribble-minted
 
 .PHONY: docs
 docs:
