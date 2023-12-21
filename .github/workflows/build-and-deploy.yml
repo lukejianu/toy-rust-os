@@ -28,11 +28,13 @@ jobs:
           variant: 'CS'
           version: '8.4'
 
-      - name: Install Minted
-        run: cd docs && echo "Y" | make install
+      - name: Install Documentation Dependencies
+        working-directory: ./docs/
+        run: make install
 
-      - name: Generate HTML from Scribble Source Files
-        run: cd docs && make docs
+      - name: Generate Scribble Documentation
+        working-directory: ./docs/
+        run: make docs
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.0
