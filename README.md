@@ -1,6 +1,6 @@
 # Toy Rust OS
 This repository is an in-progress attempt of systematically designing and implementing
-a small operating system using the Rust programming language.
+a toy operating system using the Rust programming language.
 
 We've extensively documented this project, including the motivations, necessary
 background information, component and project specifications, and much more.

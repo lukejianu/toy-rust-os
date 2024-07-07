@@ -1,5 +1,5 @@
 [package]
-name = "small-rust-os"
+name = "toy-rust-os"
 version = "0.1.0"
 edition = "2021"
 
