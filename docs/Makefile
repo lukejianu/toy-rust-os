@@ -1,3 +1,4 @@
+# NOTE: You must also have pygmentize installed and in your PATH.
 .PHONY: install
 install:
 	raco pkg install --auto --skip-installed scribble-minted
