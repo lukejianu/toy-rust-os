@@ -1,8 +1,10 @@
 #lang scribble/manual
  
 @(require racket/date)
+@(require "constants.rkt")
 
 @(define last-built (date->string (current-date) #true))
+@(define github-docs-path (string-append github-repo "/tree/main/docs"))
 
 @title{Toy Rust OS Documentation}
 
@@ -15,9 +17,9 @@
         @author+email["Derek Kaplan" "thederekkaplan@proton.me"]]
 
 This site contains documentation for the
-@hyperlink["https://github.com/lukejianu/toy-rust-os"]{toy-rust-os}
+@hyperlink[@github-repo]{toy-rust-os}
 project. This project is an attempt to systematically design and
-implement a small operating system in the Rust programming language.
+implement a toy operating system in the Rust programming language.
 We are currently in the very early stages, still deciding
 on the scope of the project.
 
@@ -25,7 +27,7 @@ This document is itself written using
 @hyperlink["https://docs.racket-lang.org/scribble/index.html"]{Scribble}, a
 Racket DSL for writing documentation.
 You can see its source at
-@hyperlink["https://github.com/lukejianu/toy-rust-os/tree/main/docs"]{https://github.com/lukejianu/toy-rust-os/tree/main/docs},
+@hyperlink[@github-docs-path]{@github-docs-path},
 starting with the @filepath{index.scrbl} file.
 
 @table-of-contents[]
