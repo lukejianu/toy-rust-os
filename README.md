@@ -15,7 +15,7 @@ First, make sure you have [Rust](https://www.rust-lang.org/tools/install) and [Q
 ```
 rustup override set nightly
 rustup component add llvm-tools-preview
-cargo install bootloader
+cargo install bootimage
 ``` 
 
 You can now run the OS by running:
