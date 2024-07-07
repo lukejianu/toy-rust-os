@@ -9,3 +9,8 @@ target
 
 # Ignore Idea files.
 .idea
+
+# Ignore generated docs.
+docs/**/*.html
+docs/**/*.css
+docs/**/*.js
