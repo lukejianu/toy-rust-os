@@ -25,7 +25,7 @@ This document is itself written using
 @hyperlink["https://docs.racket-lang.org/scribble/index.html"]{Scribble}, a
 Racket DSL for writing documentation.
 You can see its source at
-@hyperlink["https://github.com/lukejianu/toy-rust-os/tree/main/docs"]{https://github.com/lukejianu/small-rust-os/tree/main/docs},
+@hyperlink["https://github.com/lukejianu/toy-rust-os/tree/main/docs"]{https://github.com/lukejianu/toy-rust-os/tree/main/docs},
 starting with the @filepath{index.scrbl} file.
 
 @table-of-contents[]
