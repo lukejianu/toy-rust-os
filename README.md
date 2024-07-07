@@ -13,10 +13,9 @@ You can read all of this documentation at
 First, make sure you have [Rust](https://www.rust-lang.org/tools/install) and [QEMU](https://www.qemu.org/download/) installed. Then, set up the build tools:
 
 ```
-rustup override set nightly
-rustup component add llvm-tools-preview
 cargo install bootimage
 ``` 
+(We are trying to remove this step)
 
 You can now run the OS by running:
 
