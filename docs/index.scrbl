@@ -8,14 +8,6 @@
 
 @title{Toy Rust OS Documentation}
 
-@author[@author+email["Luke Jianu" "jianuluke@gmail.com"]
-        @author+email["Andrey Piterkin" "andrey.piterkin@gmail.com"]
-        @author+email["Lucas Sta Maria" "lucas@priime.dev"]
-        @author+email["Oleg Pavlenko" "oleg.pavlenko@outlook.com"]
-        @author+email["James Sweeney" "sweeneyj202@gmail.com"]
-        @author+email["Nishil Patel" "nishil.patel13@gmail.com"]
-        @author+email["Derek Kaplan" "thederekkaplan@proton.me"]]
-
 This site contains documentation for the
 @hyperlink[@github-repo]{toy-rust-os}
 project. This project is an attempt to systematically design and
